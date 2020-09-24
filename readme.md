@@ -24,3 +24,9 @@ Hello, World.
 :ok
 iex(3)>
 ```
+
+---
+
+**Resources**
+
+https://serokell.io/blog/learn-elixir - collection of Elixir learning resources.
