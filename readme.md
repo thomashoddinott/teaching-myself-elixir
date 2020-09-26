@@ -1,3 +1,9 @@
+**Why Elixir?**
+
+I gained exposure to Elixir early in my career but never got a chance to get into code. I'm here to see what the hype is all about.
+
+A niche language that seems to be gaining traction for 'mission-critical' software operations. [Elixir](https://en.wikipedia.org/wiki/Elixir_(programming_language)) traces its roots back through Erlang and the emergence of telecommunications technologies in the 80s and 90s. Elixir is built to support robust, concurrent and distributed software. You can use frameworks like [Phoenix](https://www.phoenixframework.org/) to help you build web apps. It is commonly used in sectors such as banking, ecommerce, IoT and instant messaging.
+
 **Install Elixir on Windows**
 
 Run PowerShell as administrator and install with chocolately: `choco install elixir`
@@ -30,3 +36,7 @@ iex(3)>
 **Resources**
 
 https://serokell.io/blog/learn-elixir - collection of Elixir learning resources.
+
+**Learn Elixir in One Video** https://www.youtube.com/watch?v=pBNOavRoNL0
+
+https://elixir-examples.github.io/
