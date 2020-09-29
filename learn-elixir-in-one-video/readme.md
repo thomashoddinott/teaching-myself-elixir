@@ -35,7 +35,7 @@ iex(3)>
 
 Strings [2.ex](./2.ex):
 
-```powershell
+```powearshell
 iex(14)> c("2.ex")
 warning: redefining module M (current version defined in memory)
   2.ex:1
@@ -59,6 +59,51 @@ Lorem ipsum is longer
 iex(16)>
 ```
 
-**todo - look for decent vscode autocomplete, syntax highligher**
+Some math [3.ex](./3.ex)
 
-*continue from 12:48*
+```powershell
+iex(4)> M.main
+5 + 4 = 9
+5 - 4 = 1
+5 * 4 = 20
+5 / 4 = 1.25
+5 div 4 = 1
+5 rem 4 = 1
+:ok
+iex(5)>
+```
+
+Comparison and logical operators [4.ex](./4.ex)
+
+```
+iex(8)> M.main    
+4 == 4.0 : true
+4 === 4.0 : false
+4 != 4.0 : false
+4 !== 4.0 : true
+5 > 4 : true
+5 >= 4 : true
+5 < 4 : false
+5 <= 4 : false
+Vote & Drive : false
+Vote OR Drive : true
+false
+:ok
+iex(9)>
+```
+
+Decision making [5.ex](./5.ex)
+
+```powershell
+iex(14)> M.main    
+Can't Vote
+You're not 18
+You can drive
+Entered 2
+Ternary : Can't Vote
+:ok
+iex(15)>
+```
+
+_continue from 23:16_
+
