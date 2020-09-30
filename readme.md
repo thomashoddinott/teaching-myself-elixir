@@ -37,8 +37,12 @@ iex(3)>
 
 https://serokell.io/blog/learn-elixir - collection of Elixir learning resources.
 
-**Learn Elixir in One Video** - https://www.youtube.com/watch?v=pBNOavRoNL0
+Learn Elixir in One Video - https://www.youtube.com/watch?v=pBNOavRoNL0
 
 https://elixir-examples.github.io/
 
-**Elixir Wizards Podcast** - https://player.fm/series/elixir-wizards
+Elixir Wizards Podcast - https://player.fm/series/elixir-wizards
+
+Elixir Mix Podcast - https://player.fm/series/elixir-mix - better of the two IMO
+
+A Chat Room in 8 Minutes with Phoenix - https://www.youtube.com/watch?v=ZUNzXbIP_FQ
