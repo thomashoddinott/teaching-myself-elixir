@@ -117,9 +117,59 @@ Weight : 175
 iex(5)>
 ```
 
-Lists [7.ex](./7.ex)
+Playing around with lists [7.ex](./7.ex)
 
 ```powershell
-...
+iex(53)> M.main
+list3 = list1 ++ list2 : [1, 2, 3, 4, 5, 6]
+list4 = list3 -- list1: [4, 5, 6]
+is 6 in list4? : true
+Head : 1
+Tail : [2, 3, 4, 5, 6]
+[97, 98]
+Enumerate a list
+2
+3
+4
+5
+6
+Anotha one
+Random
+words
+in
+a
+list
+Random
+words
+in
+a
+list
+--- nothing left see here!
+words
+in
+a
+list
+--- nothing left see here!
+ok
+Random
+in
+a
+list
+--- nothing left see here!
+ok
+Random
+words
+in
+a
+yeah
+list
+--- nothing left see here!
+ok
+Random
+list
+--- nothing left see here!
+ok
+[name: "Derek", height: 6.25]
+iex(54)>
 ```
 
