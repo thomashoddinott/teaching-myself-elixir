@@ -105,5 +105,21 @@ Ternary : Can't Vote
 iex(15)>
 ```
 
-_continue from 23:16_
+Tuples [6.ex](./6.ex)
+
+```powershell
+iex(4)> M.main
+Tuple : true
+Age : 42
+Size : 4
+Weight : 175
+:ok
+iex(5)>
+```
+
+Lists [7.ex](./7.ex)
+
+```powershell
+...
+```
 
