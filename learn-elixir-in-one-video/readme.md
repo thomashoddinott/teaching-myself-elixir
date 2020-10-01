@@ -173,3 +173,42 @@ ok
 iex(54)>
 ```
 
+Maps [8.ex](./8.ex)
+
+```powershell
+[M]
+iex(6)> M.main 
+capital of Alaska is Juneau
+Capital of Arizona is Phoenix
+%{
+  "Alabama" => "Montgomery",
+  "Alaska" => "Juneau",
+  "Arizona" => "Phoenix",
+  "Arkansas" => "Little Rock"
+}
+iex(7)>
+```
+
+Pattern Matching [9.ex](./9.ex)
+
+```powershell
+iex(10)> M.main
+Width : 30
+Get num : 40
+:ok
+iex(11)>
+```
+
+Anonymous Functions [10.ex](./10.ex)
+
+```powershell
+[M]
+iex(19)> M.main
+5 + 5 = 10
+7 - 6 = 1
+1 + 2 = 3
+1 + 2 + 3 = 6
+2
+:ok
+iex(20)>
+```
