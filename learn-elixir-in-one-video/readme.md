@@ -212,3 +212,20 @@ iex(19)> M.main
 :ok
 iex(20)>
 ```
+
+Recursion [11.ex](./11.ex)
+
+```powershell
+iex(12)> M.main
+Factorial of 3 : 6
+Factorial of 4 : 24
+Sum : 6
+Num : 5
+Num : 4
+Num : 3
+Num : 2
+Num : 1
+nil
+iex(13)>
+```
+
