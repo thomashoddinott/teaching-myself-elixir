@@ -1,20 +1,24 @@
-# AChatRoomIn8MinutesWithPhoenix
+**Setting up Phoenix and Postgres so we can follow the chat room tutorial: https://www.youtube.com/watch?v=ZUNzXbIP_FQ**
 
-To start your Phoenix server:
+I am using PowerShell. I didn't have Phoenix or Postgres installed on my machine before starting the tutorial.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+**To do:**
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Install Phoenix: `mix archive install hex phx_new`
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+Install Postgres:
 
-## Learn more
+This requires a few steps. 
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+- `choco install postgresql` from an Admin PowerShell. This will take 5 mins or so. On my machine the installation produced a random `postgres` user password. Make sure you save that somewhere.
+- Once installed, run: `psql -U postgres` and give the password that you saved. 
+- Now change the password **postgres**: `alter user postgres with password 'postgres';`. 
+
+The last step allows the `mix ecto.create` command to run as expected. 
+
+You should be able to follow the video from here on.
+
+---
+
+https://nexusger.de/posts/2015-10-30-elixir-postgres-and-chocolatey/
+
