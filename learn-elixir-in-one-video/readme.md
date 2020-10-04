@@ -229,3 +229,59 @@ nil
 iex(13)>
 ```
 
+Enumerables [12.ex](./12.ex)
+
+```powershell
+iex(14)> M.main
+Even List :
+      false
+
+1
+2
+3
+[2, 4, 6]
+Sum : 6
+[1, 2]
+[1, 2]
+iex(15)>
+```
+
+List Comprehensions [13.ex](./13.ex)
+
+```powershell
+iex(18)> M.main
+[2, 4, 6]
+[2, 4]
+[2, 4]
+iex(19)>
+```
+
+Error Handling [14.ex](./14.ex)
+```powershell
+iex(20)> M.main
+Can't divide by Zero
+:ok
+iex(21)>
+```
+
+Concurrency [15.ex](./15.ex)
+```powershell
+iex(2)> M.main
+Guten tag Jurgen
+Num : 5
+Num : 10
+Num : 4
+Num : 9
+:ok
+Num : 3
+Num : 8
+Num : 2
+Num : 7
+iex(3)> Num : 1
+iex(3)> Num : 6
+iex(3)> Num : 5
+iex(3)>
+```
+Dead easy in Elixir. You can clearly see both processes firing off in parallel!
+
+not sure what's going on near the end with `iex(3)> ...`
