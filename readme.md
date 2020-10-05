@@ -47,3 +47,5 @@ Elixir Wizards Podcast - https://player.fm/series/elixir-wizards
 
 Elixir Mix Podcast - https://player.fm/series/elixir-mix - better of the two IMO
 
+https://elixircasts.io/ - some of their material, like the chat room tutorial, can be found for free
+
