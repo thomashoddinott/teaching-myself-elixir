@@ -36,8 +36,9 @@ iex(3)>
 **Resources**
 
 - [x] [learn-elixir-in-one-video](./learn-elixir-in-one-video) - https://www.youtube.com/watch?v=pBNOavRoNL0
-
 - [x] [a-chat-room-in-8-minutes-with-phoenix](./a-chat-room-in-8-minutes-with-phoenix) - https://www.youtube.com/watch?v=ZUNzXbIP_FQ
+
+create a blog in phoenix - https://www.monterail.com/blog/elixir-phoenix-framework-tutorial
 
 https://serokell.io/blog/learn-elixir - collection of Elixir learning resources
 
