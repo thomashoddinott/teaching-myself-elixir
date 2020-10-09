@@ -19,6 +19,7 @@ iex(6)> TodoList.entries(l, "09/10/2020")
 ```
 
 We can abstract some stuff out into a new module and call it from another
+
 [todo_multi_dict.ex](./todo_multi_dict.ex)
 
 ```powershell
