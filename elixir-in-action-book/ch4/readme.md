@@ -84,3 +84,84 @@ iex(11)> f3 = %Fraction{f1 | b: 4}
 %Fraction{a: 1, b: 4}
 ```
 
+Again, we can abstract away our struct:
+
+```elixir
+def new(a, b) do
+	%Fraction{a: a, b: b}
+end
+```
+
+So the client doesn't even have to know it's there!
+
+Testing Fraction.add/2:
+
+```elixir
+iex(2)> Fraction.add(Fraction.new(1,2), Fraction.new(1,4)) |> Fraction.value()
+0.75
+```
+
+**Structs vs. Maps**
+
+Structs are really just maps. But, a struct is a functional abstraction and should therefore behave according to the implementation of the module where it's defined. 
+
+e.g.
+
+```elixir
+iex(1)> f1 = Fraction.new(1,10)
+%Fraction{a: 1, b: 10}
+iex(2)> Enum.to_list(f1)
+** (Protocol.UndefinedError) protocol Enumerable not implemented for %Fraction{a: 1, b: 10} of type Fraction (a struct)
+# ^ because fraction is not enumerable, we cannot convert use Enum.to_list
+iex(2)> Enum.to_list(%{a: 1, b: 10})
+[a: 1, b: 10]
+# ^ however we can pass in an ordinary map to Enum.to_list
+iex(3)> Map.to_list(f1)
+[__struct__: Fraction, a: 1, b: 10]
+# ^ if we use Map.to_list instead, we can pass in our struct (which is just a map)
+```
+
+in addition: 
+
+```elixir
+iex(4)> %Fraction{} = %{a: 1, b: 2}
+** (MatchError) no match of right hand side value: %{a: 1, b: 2}
+# ^ a struct can't match a map
+iex(4)> %{a: a, b: b} = %Fraction{a: 1, b: 2}
+%Fraction{a: 1, b: 2}
+iex(5)> a
+1
+iex(6)> b
+2
+# ^ but a plain map pattern can match a struct
+```
+
+Another way to structure data is with [Records](https://hexdocs.pm/elixir/Record.html):
+
+```elixir
+iex(7)> require Record
+Record
+iex(8)> Record.is_record({User, "john", 27})
+true
+```
+
+Records are mostly present for historical reasons. You may need to access or interface with them, but they won't be explained in this book.
+
+**4.1.5 Data Transparency**
+
+Data in Elixir is always transparent. Clients can read any information from your structs (and any other data type). In that sense, [encapsulation](https://www.google.com/search?client=firefox-b-d&q=encapsulation+OO) works differently than in typical OO languages. In Elixir, modules are in charge of abstracting the data and providing operations to manipulate and query that data, but the data is never hidden. 
+
+_$ iex todo_entry_map.ex_:
+
+```elixir
+iex(1)> todo_list = TodoList.new() |> TodoList.add_entry(%{date: ~D[2018-12-19], title: "Dentist"})
+%{~D[2018-12-19] => [%{date: ~D[2018-12-19], title: "Dentist"}]}
+```
+
+Automatically, we see the to-do list is powered by a map and we see how the individual entries are kept.
+
+
+
+
+
+carry on from mapsets
