@@ -160,8 +160,59 @@ iex(1)> todo_list = TodoList.new() |> TodoList.add_entry(%{date: ~D[2018-12-19],
 
 Automatically, we see the to-do list is powered by a map and we see how the individual entries are kept.
 
+*skipping section on mapsets*
+
+**4.2 Working with hierarchical data**
+
+We'll extend the TodoList to to provide basic CRUD support. We already did the C and R parts with add_entry/3 and entries/1, respectively.
+
+**4.2.1**
+
+We need to uniquely identify entries, so let's attach a unique ID to each.
+
+*$ iex [todo_crud.ex](./todo_crud.ex)*
+
+```elixir
+iex(1)> todo_list = TodoList.new() |>
+...(1)> TodoList.add_entry(%{date: ~D[2018-12-19], title: "Dentist"}) |>
+...(1)> TodoList.add_entry(%{date: ~D[2018-12-20], title: "Shopping"}) |>
+...(1)> TodoList.add_entry(%{date: ~D[2018-12-19], title: "Movies"})
+%TodoList{
+  auto_id: 4,
+  entries: %{
+    1 => %{date: ~D[2018-12-19], id: 1, title: "Dentist"},
+    2 => %{date: ~D[2018-12-20], id: 2, title: "Shopping"},
+    3 => %{date: ~D[2018-12-19], id: 3, title: "Movies"}
+  }
+}
+iex(2)> TodoList.entries(todo_list, ~D[2018-12-19])
+[
+  %{date: ~D[2018-12-19], id: 1, title: "Dentist"},
+  %{date: ~D[2018-12-19], id: 3, title: "Movies"}
+]
+```
+
+**Updating entries**
+
+??? - check forum post for any help
+
+**Deleting entries**
+
+```elixir
+iex(1)> todo_list = TodoList.new() |> TodoList.add_entry(%{date: ~D[2018-12-19], title: "Dentist"})
+%TodoList{
+  auto_id: 2,
+  entries: %{1 => %{date: ~D[2018-12-19], id: 1, title: "Dentist"}}
+}
+iex(2)> TodoList.delete_entry(todo_list, 1)
+%TodoList{auto_id: 2, entries: %{}}
+```
 
 
 
 
-carry on from mapsets
+
+*todo - get vscode elixir extensions properly set up before proceeding - see Trello card*
+
+
+
