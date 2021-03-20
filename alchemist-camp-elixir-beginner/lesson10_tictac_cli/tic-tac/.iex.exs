@@ -1,0 +1,1 @@
+alias TicTac.Game
