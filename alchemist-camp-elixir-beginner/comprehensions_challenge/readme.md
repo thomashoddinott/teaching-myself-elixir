@@ -1,4 +1,4 @@
-1. Use comprehensions to generate a deck or cards from lists of suits (**C**lubs, **S**pades, **H**earts, **D**iamonds) and ranks (2-10, J, Q, K, A).
+1. Use comprehensions to generate a deck of cards from lists of suits (**C**lubs, **S**pades, **H**earts, **D**iamonds) and ranks (2-10, J, Q, K, A).
 
    [my_sol()](./list_comprehensions.ex#L2):
 
