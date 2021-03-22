@@ -1,6 +1,6 @@
 1. Use comprehensions to generate a deck or cards from lists of suits (**C**lubs, **S**pades, **H**earts, **D**iamonds) and ranks (2-10, J, Q, K, A).
 
-   [my_sol()](https://github.com/thomashoddinott/teaching-myself-elixir/blob/bd0804204bb9c7327463095406e41d21d7e6eb7a/alchemist-camp-elixir-beginner/comprehensions_challenge/list_comprehensions.ex#L2):
+   [my_sol()](./list_comprehensions.ex#L2):
 
    ```elixir
    iex(4)> ListComps.my_sol
