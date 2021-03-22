@@ -2,13 +2,5 @@
 
 https://alchemist.camp/start#beginner
 
----
-
-**to do**
-
-- Find good VScode extensions! 
-  - https://thinkingelixir.com/elixir-in-vs-code/
-  - https://thinkingelixir.com/vs-code-broken-for-elixir/
-- do list comprehensions challenge
-- go over tictac cli (lesson 10)
+For VS Code, the [ElixirLS](https://marketplace.visualstudio.com/items?itemName=JakeBecker.elixir-ls) extension has you covered.
 

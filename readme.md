@@ -35,6 +35,8 @@ iex(3)>
 
 **Resources**
 
+- [] **[Alchemist Camp - Learn Elixir by Building Things](./alchemist-camp-elixir-beginner)** - https://alchemist.camp/start#beginner — the best free intro to Elixir I've found so far
+
 - [x] [learn-elixir-in-one-video](./learn-elixir-in-one-video) - https://www.youtube.com/watch?v=pBNOavRoNL0
 - [x] [a-chat-room-in-8-minutes-with-phoenix](./a-chat-room-in-8-minutes-with-phoenix) - https://www.youtube.com/watch?v=ZUNzXbIP_FQ
 
