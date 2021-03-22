@@ -23,7 +23,8 @@ defmodule Lesson6AlchemyMarkdown.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-      {:earmark, "~> 1.2"} # ~> means go to 1.2 or higher, but not to 2.X
+      # ~> means go to 1.2 or higher, but not to 2.X
+      {:earmark, "~> 1.2"}
     ]
   end
 end

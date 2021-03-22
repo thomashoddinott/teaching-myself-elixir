@@ -1,14 +1,14 @@
 defmodule AlchemyMarkdown do
   def to_html(markdown) do
     markdown
-      |> hrs
-      |> earmark
-      |> big
-      |> small
+    |> hrs
+    |> earmark
+    |> big
+    |> small
   end
-  
+
   def earmark(markdown) do
-    Earmark.as_html!((markdown || ""), %Earmark.Options{smartypants: false})
+    Earmark.as_html!(markdown || "", %Earmark.Options{smartypants: false})
   end
 
   def big(text) do
@@ -17,10 +17,10 @@ defmodule AlchemyMarkdown do
 
   def small(text) do
     Regex.replace(~r/\-\-(.*)\-\-/, text, "<small>\\1</small>")
-  end 
+  end
 
   def hrs(text) do
-    Regex.replace(~r{(^|\r\n|\r|\n)([-*])( *\2 *)+\2}, text, "\\1<hr />") 
+    Regex.replace(~r{(^|\r\n|\r|\n)([-*])( *\2 *)+\2}, text, "\\1<hr />")
   end
 
   def test_str do
@@ -43,5 +43,5 @@ defmodule AlchemyMarkdown do
     things ++big things!++ --small things--
     *           * *
     """
-  end 
+  end
 end
