@@ -1,5 +1,10 @@
 defmodule StatWatch do
 
+  def run do
+    fetch_stats()
+    |> save_csv
+  end
+
   def column_names() do
     Enum.join ~w(DateTime Subscribers Videos Views), ","
   end
@@ -16,6 +21,14 @@ defmodule StatWatch do
     ] |> Enum.join(", ")
   end
 
+  def save_csv(row_of_stats) do
+    filename = "stats.csv"
+    unless File.exists? filename do
+      File.write! filename, column_names() <> "\n"
+    end
+      File.write filename, row_of_stats <> "\n", [:append]
+  end
+
   def stats_url do
     # https://developers.google.com/youtube/v3/getting-started
     # and follow instructions to create your project api key
@@ -25,5 +38,3 @@ defmodule StatWatch do
     "#{youtube_api_v3}channels?#{channel}&#{key}&part=statistics"
   end
 end
-
-# https://www.youtube.com/watch?v=vqxyhJewKjI    16:55
