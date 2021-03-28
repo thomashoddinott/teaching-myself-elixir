@@ -12,6 +12,7 @@ defmodule StatWatch do
   def fetch_stats(channel_id, url) do
     now = DateTime.to_string(%{DateTime.utc_now | microsecond: {0, 0}})
 
+    IO.puts "data.alexa.com/data?cli=10&url=#{url}"
     %{body: body} = HTTPoison.get! "data.alexa.com/data?cli=10&url=#{url}", [], hackney: [:insecure]
     alexa = body |> SweetXml.xpath(~s"//POPULARITY/@TEXT") || "unranked"
 
