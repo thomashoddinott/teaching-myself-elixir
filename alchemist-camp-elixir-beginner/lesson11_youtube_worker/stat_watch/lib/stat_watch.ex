@@ -12,7 +12,9 @@ defmodule StatWatch do
   def fetch_stats() do
     now = DateTime.to_string(%{DateTime.utc_now | microsecond: {0, 0}})
 
-    %{body: body} = HTTPoison.get! stats_url()
+    %{body: body} = HTTPoison.get! stats_url(), [], hackney: [:insecure]
+    # https://stackoverflow.com/a/33205109/14177413
+
     %{items: [%{statistics: stats} | _]} = Poison.decode!(body, keys: :atoms)
     [ now,
       stats.subscriberCount,
