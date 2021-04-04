@@ -19,6 +19,33 @@ defmodule BMP do
     end
   end
 
+  def example_monochrome(width \\ 500, height \\ 500, name \\ "mono.bmp") do
+    header = file_header(26 + 3*2) <> win2x_header(width, height, 1)
+    palette = win2x_palette([[255,0,128], [127, 255, 127]])
+    data = for row <- 1..height, into: <<>> do
+      cols = for col <- 1..width, into: <<>> do
+        <<(if row*row + col*col > 100000, do: 1, else: 0)::size(1)>>
+      end
+      <<cols::bitstring, padding_for(width, 1)::bitstring>>
+    end
+    File.write!(name, header <> palette <> data)
+  end
+
+  def example_4bit(width \\ 400, height \\ 100, name \\ "4bit.bmp") do
+    header = file_header(26 + 3*16) <> win2x_header(width, height, 4)
+    colors = [[255,0,0], [0,255,0], [0,0,255], [255,255,0], [255,0,255], [0,255,255],
+              [255,255,255], [0,0,0], [128,0,0], [0,128,0], [0,0,128], [128,128,128],
+              [255,255,128], [255,128,255], [128,255,255], [255,0,128]]
+    palette = win2x_palette(colors)
+    data = for row <- 1..height, into: <<>> do
+      cols = for col <- 1..width, into: <<>> do
+        <<rem(div(col-1, 25), 16)::size(4)>>
+      end
+      <<cols::bitstring, padding_for(width, 4)::bitstring>>
+    end
+    File.write!(name, header <> palette <> data)
+  end
+
   def example_file(width \\ 32, height \\ 100, name \\ "img.bmp") do
     save(name, file_header() <> win2x_header(width, height),
           example_data(width, height))
@@ -50,9 +77,9 @@ defmodule BMP do
     size <> w <> h <> planes <> bpp
   end
 
-  def win2x_palette do
-    # 1). 2-bit palette
-    # 2). 4-bit palette
+  def win2x_palette(colors) do
+    Enum.into(colors, <<>>, &(apply(BMP, :pixel, &1))) # apply high-order fn
+    # [[0,0,0],[255,255,255]]
   end
 
 end
